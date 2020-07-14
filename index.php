@@ -32,3 +32,35 @@ $matches = [
 
    <?php } ?>
  </ul>
+
+ <!-- Snack 2 -->
+
+ <?php
+  $name = $_GET['name'];
+  $mail = $_GET['mail'];
+  $age = $_GET['age'];
+
+  // var_dump($name);
+  // var_dump($mail);
+  // var_dump($age);
+
+
+  if(empty($name) || empty($mail) || empty($age) ){
+    echo "Accesso negato";
+  }
+  elseif ( strlen($name) < 3 ) {
+    echo "Accesso negato";
+  }
+  elseif (strpos($mail,'.') === false || strpos($mail,'@') === false) {
+    echo "Accesso negato";
+  }
+  elseif (is_numeric($age) === false) {
+    echo "Accesso negato";
+  }else {
+    echo "Accesso riuscito";
+  }
+
+
+
+
+  ?>
